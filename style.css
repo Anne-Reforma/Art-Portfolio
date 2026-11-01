@@ -1,0 +1,70 @@
+@keyframes bpx {
+  0%, 7.5%, 100% { background-position-x: 0, 0, 1em, 2em, 3em; }
+  12.5%, 20%     { background-position-x: 0, 1em, 0, 3em, 2em; }
+  25%, 32.5%     { background-position-x: 0, -1em, -2em, 5em, 4em; }
+  37.5%, 45%     { background-position-x: 0, 1em, -4em, 7em, 2em; }
+  50%, 57.5%     { background-position-x: 0, -2em, -5em, 8em, 5em; }
+  62.5%, 70%     { background-position-x: 0, -3em, -4em, 7em, 6em; }
+  75%, 82.5%     { background-position-x: 0, -1em, -2em, 5em, 4em; }
+  87.5%, 95%     { background-position-x: 0, -3em, 0, 3em, 6em; }
+}
+
+@keyframes bpy {
+  0%, 7.5%, 100% { background-position-y: 0, 0, 1em, 2em, 3em; }
+  12.5%, 20%     { background-position-y: 0, 1em, 0, 3em, 2em; }
+  25%, 32.5%     { background-position-y: 0, -1em, -2em, 5em, 4em; }
+  37.5%, 45%     { background-position-y: 0, 1em, -4em, 7em, 2em; }
+  50%, 57.5%     { background-position-y: 0, -2em, -5em, 8em, 5em; }
+  62.5%, 70%     { background-position-y: 0, -3em, -4em, 7em, 6em; }
+  75%, 82.5%     { background-position-y: 0, -1em, -2em, 5em, 4em; }
+  87.5%, 95%     { background-position-y: 0, -3em, 0, 3em, 6em; }
+}
+
+
+html {
+  height: 100% ;
+  width: 100% ;
+}
+
+body {
+  margin: 0 ;
+  padding: 0;
+  width: 100% ;
+  min-height: 100vh ;
+  background-color: #ffffff ;
+
+  background-image:
+  radial-gradient(transparent 0.6em, #def 0.6em),
+  conic-gradient(at 1em 1em, transparent 270deg, #C0DDDF 270deg),
+  conic-gradient(at 1em 1em, transparent 270deg, #FFD0D0 270deg),
+  conic-gradient(at 1em 1em, transparent 270deg, #C0DDDF 270deg),
+  conic-gradient(at 1em 1em, transparent 270deg, #FFD0D0 270deg);
+
+  background-size: 0em 0em, 4em 4em, 4em 4em, 4em 4em, 4em 4em ;
+  background-repeat: repeat ;
+
+  animation: bpx 12s 5000, bpy 12s -3.75s 5000;
+}
+
+.fade-to-white {
+  opacity: 0;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+
+  animation: fadeInWhite 1s 4s ease-in-out forwards;
+}
+
+@keyframes fadeInWhite {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
