@@ -43,7 +43,7 @@ body {
   background-size: 0em 0em, 4em 4em, 4em 4em, 4em 4em, 4em 4em ;
   background-repeat: repeat ;
 
-  animation: bpx 12s 5000, bpy 12s -3.75s 5000;
+  animation: bpx 12s infinite, bpy 12s -3.75s infinite;
 }
 
 .fade-to-white {
