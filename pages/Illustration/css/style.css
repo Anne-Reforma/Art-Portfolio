@@ -16,58 +16,297 @@ body {
     100% { opacity: 1; }
 }
 
-.header, .main-header {
+.header {
     background: transparent;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.main-header .header-title {
-    color: #ffc7c770;
-    font-size: 10rem;
-    font-family: 'Gordita', sans-serif;
-    line-height: 0.9;
-    margin-top: 20px;
+.header-title {
+    color: #F8F2F3;
+    font-family: 'Times New Roman', serif;
+    text-align: center;
+    font-style: italic;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    word-break: keep-all;
+    overflow-wrap: normal;
 }
 
-.main-header .header-subtitle {
-    font-family: 'Gordita', sans-serif;
-    font-size: 1.5rem;
-    color: #A42340;
-    margin-top: 15px;
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.content-img, .content-img1, .content-img2 {
+    background-color: #F8F2F3;
+    box-shadow: 0 0 15px #3333332b;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.Illus {
+    border-radius: 35px;
+    object-fit: cover;
+    box-shadow: 0 0 15px #3333332b;
+    flex-shrink: 0;
+}
+
+.text {
+    color: #F8F2F3;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.text-footer {
+    color: #F8F2F3;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 100px;
 }
 
 .capsule-nav {
     position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
     z-index: 1000;
+    display: flex;
+    box-sizing: border-box;
 }
 
-.nav-btn {
+.menu-checkbox {
+    display: none;
+}
+
+.hamburger-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 105px;
-    height: 34px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-family: 'Gordita', system-ui, sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: #333333;
+    width: 50px;
+    height: 44px;
+    border-radius: 30px;
     background-color: #C0DEE6;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #333333;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
 
-.nav-btn:hover {
+.hamburger-btn:hover {
     background-color: #A0CED9;
 }
 
-.nav-btn.active {
-    background-color: #9C1F43;
+.nav-links {
+    display: flex;
+    width: 100%;
+}
+
+.nav-links .nav-btn {
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Gordita', system-ui, sans-serif;
+    font-weight: 500;
+    color: #333333;
+    background-color: #F8F2F3;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    box-shadow: 0 0 15px #3333332b;
+}
+
+.nav-links .nav-btn.active {
+    background-color: #FFC9A5;
     color: #FFFFFF;
+    box-shadow: 0 0 15px #3333332b;
+}
+
+@media (max-width: 767px) {
+    .header-title {
+        font-size: 2.8rem;
+        margin-top: 40px;
+        padding: 0 15px;
+    }
+
+    .content {
+        padding: 0 16px;
+        gap: 20px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+    }
+
+    .content-img, .content-img1, .content-img2 {
+        padding: 40px;
+        border-radius: 30px;
+        gap: 20px;
+        max-width: 480px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .content-img::-webkit-scrollbar,
+    .content-img1::-webkit-scrollbar,
+    .content-img2::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .content-img::-webkit-scrollbar-thumb,
+    .content-img1::-webkit-scrollbar-thumb,
+    .content-img2::-webkit-scrollbar-thumb {
+        background: rgba(164, 35, 64, 0.2);
+        border-radius: 10px;
+    }
+
+    .Illus {
+        width: 230px;
+        height: 306px;
+        border-radius: 30px;
+    }
+
+    .capsule-nav {
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 400px;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .hamburger-btn {
+        align-self: flex-end;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .nav-links .nav-btn {
+        display: none;
+        width: 100%;
+        height: 44px;
+        font-size: 1rem;
+    }
+
+    .nav-links .nav-btn.active {
+        display: flex;
+    }
+
+    .menu-checkbox:checked ~ .nav-links {
+        background-color: transparent;
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .menu-checkbox:checked ~ .nav-links .nav-btn {
+        display: flex;
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        padding: 45px 45px 10px 45px;
+    }
+
+    .header-title {
+        font-size: 4.2rem;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .content {
+        padding: 24px;
+        gap: 25px;
+        margin-top: 20px;
+        margin-bottom: 140px;
+    }
+
+    .content-img, .content-img1, .content-img2 {
+        padding: 40px;
+        border-radius: 45px;
+        gap: 20px;
+        max-width: 900px;
+    }
+
+    .Illus {
+        width: 215px;
+        height: 306px;
+        border-radius: 30px;
+    }
+
+    .capsule-nav {
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 650px;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .hamburger-btn {
+        display: none;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        gap: 12px;
+    }
+
+    .nav-links .nav-btn {
+        display: flex;
+        flex: 1;
+        min-width: 80px;
+        height: 42px;
+        font-size: 1.05rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 50px 65px 10px 65px;
+    }
+
+    .header-title {
+        font-size: 5.5rem;
+        text-align: center;
+    }
+
+    .content {
+        max-width: 1440px;
+        margin: 0 auto;
+        gap: 30px;
+    }
+
+    .content-img, .content-img1, .content-img2 {
+        padding: 50px;
+        gap: 30px;
+        max-width: 1280px;
+    }
+
+    .Illus {
+        width: 290px;
+        height: 440px;
+        border-radius: 45px;
+    }
+
+    .capsule-nav {
+        bottom: 50px;
+    }
 }
